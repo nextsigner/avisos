@@ -2,8 +2,9 @@
 
 ## Modo de Uso
 
-*1 Instalar Unik Qml Engine desde http://www.unikode.org/p/download.html
-*2 Ejecutar Unik con los parámetros necesarios para mostar los mensajes en pantalla.
+* Instalar Unik Qml Engine desde http://www.unikode.org/p/download.html
+
+* Ejecutar Unik con los parámetros necesarios para mostar los mensajes en pantalla.
 
 
 unik.exe -folder=<carpeta donde está este archivo main.qml> <mensaje> <color de fondo> <color de letra de mensaje> <tamaño de fuente> <hora:minuto de evento>
