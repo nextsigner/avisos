@@ -12,4 +12,4 @@ Ejemplo:
 
 unik.exe -folder=C:/Users/qt/Documentos/avisos "Ya comenzamos con el directo" "#333" "yellow" 80 17:30
 
-[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
+[logo]: https://github.com/nextsigner/avisos/raw/master/screenshot.png "Ejemplo"
