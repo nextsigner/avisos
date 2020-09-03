@@ -14,3 +14,8 @@ Ejemplo:
 unik.exe -folder=C:/Users/qt/Documentos/avisos "Ya comenzamos con el directo" "#333" "yellow" 80 17:30
 
 ![Ejemplo](https://github.com/nextsigner/avisos/raw/master/screenshot.png)
+
+## Más información
+
+Correo: nextsigner@gmail.com
+Whatsapp: +54 11 3802 4370
