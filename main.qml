@@ -13,8 +13,10 @@ ApplicationWindow{
     property int h: 0
     property int m: 0
     property int s: 0
+    FontLoader { id: webFont; name: "Pozofour";source: "./Pozofour.ttf" }
     Text{
         id: texto
+        font.family: webFont.namead
         text: '<b>Aviso</b>'
         font.pixelSize: 30
         width: 800
