@@ -14,9 +14,17 @@ ApplicationWindow{
     property int m: 0
     property int s: 0
     FontLoader { id: webFont; name: "Pozofour";source: "./Pozofour.ttf" }
+    Item{
+        id: xApp
+        anchors.fill: parent
+        Emisor{
+            anchors.centerIn: parent
+            //anchors.fill: parent
+        }
+    }
     Text{
         id: texto
-        font.family: webFont.namead
+        font.family: webFont.name
         text: '<b>Aviso</b>'
         font.pixelSize: 30
         width: 800
@@ -83,7 +91,7 @@ ApplicationWindow{
         sequence: 'Esc'
         onActivated: Qt.quit()
     }
-    Component.objectName: {
+    Component.onCompleted: {
         console.log('Aplicacion iniciada!')
         if(Qt.application.arguments.length<3)return
         let dato=Qt.application.arguments[2]
@@ -97,7 +105,7 @@ ApplicationWindow{
         if(Qt.application.arguments.length<6)return
         let fonts=Qt.application.arguments[5]
         texto.font.pixelSize=fonts
-        cuentaAtras.font.pixelSize=fonts
+        cuentaAtras.font.pixelSize=fonts*0.5
         if(Qt.application.arguments.length<7)return
         let parHora=(''+Qt.application.arguments[6]).split(':')//10:30
         let d=new Date(Date.now())
