@@ -25,7 +25,7 @@ ApplicationWindow{
         anchors.fill: parent
         Text{
             id: cuentaAtras
-            text: '<b>00:00:00</b>'
+            color: texto.color
             font.pixelSize: 30
             wrapMode: Text.WordWrap
             anchors.right: parent.right
