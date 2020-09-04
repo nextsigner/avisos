@@ -1,6 +1,6 @@
 /*
   Aplicación para mostrar en modo pantalla completa una cuenta regresiva de un evento de Twitch.
-Este código fue creado por nextsigner el día 3/9/2020 en el directo de Twitch junto a TheGhost1304.
+Este código fue creado por nextsigner el día 4/9/2020 en el directo de Twitch junto a TheGhost1304.
 */
 import QtQuick 2.7
 import QtQuick.Controls 2.0
