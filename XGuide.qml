@@ -1,4 +1,5 @@
-import QtQuick 2.0
+import QtQuick 2.12
+import QtQuick.Controls 2.12
 
 Rectangle {
     id: r
@@ -9,12 +10,15 @@ Rectangle {
         width: r.width-app.fs*2
         height: r.height
         anchors.horizontalCenter:  r.horizontalCenter
+        contentWidth: textInfo.contentWidth
+        contentHeight: textInfo.contentHeight+app.fs*3
+        ScrollBar.vertical: ScrollBar{ }
         Text{
             id: textInfo
             text: r.info
             color: 'white'
             font.pixelSize: app.fs
-            width: parent.width
+            width: r.width-app.fs*3
             wrapMode: Text.WordWrap
             textFormat: Text.RichText
         }
@@ -26,9 +30,9 @@ Rectangle {
                 +'  <li>F1: Ver/Ocultar Ayuda</li>'
                 +'  <li>F2 o Crtl+r: Rotar Cámara</li>'
                 +'  <li>F3 o Crtl+-: Bajar Zoom</li>'
-                +'  <li>F4 oCrtl++: Subir Zoom</li>'
+                +'  <li>F4 o Crtl++: Subir Zoom</li>'
                 +'  <li>Crtl+c: Centrar Cámara</li>'
-                +'  <li>Esc: Cerrar aplicación</li>'
+                +'  <li>Esc: Cerrar esta Guía o Cerrar aplicación</li>'
                 +'</ul>'
                 +'<br />'
                 +'<h2>Sobre Unik QtQuick WebCam</h2>'

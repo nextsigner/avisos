@@ -55,6 +55,9 @@ ApplicationWindow{
             rotation: apps.cameraRotation
             onXChanged: apps.cameraX=x
             onYChanged: apps.cameraY=y
+            onWidthChanged: {
+                //if(width<100)width=100;height=100
+            }
             MouseArea{
                 anchors.fill: parent
                 drag.target: parent
@@ -63,8 +66,7 @@ ApplicationWindow{
                 acceptedButtons: Qt.LeftButton | Qt.RightButton
                 onDoubleClicked: {
                     if (mouse.modifiers & Qt.ControlModifier){
-                        xCamera.x=(app.width-xCamera.width)/2
-                        xCamera.x=(app.height-xCamera.height)/2
+                        center()
                     }
                 }
                 onClicked: {
@@ -73,12 +75,10 @@ ApplicationWindow{
                     }
 
                     if(mouse.button & Qt.LeftButton) {
-                        xCamera.width+=xCamera.width*0.1
-                        xCamera.height+=xCamera.height*0.1
+                        zoom(1)
                     }
                     if(mouse.button & Qt.RightButton) {
-                        xCamera.width-=xCamera.width*0.1
-                        xCamera.height-=xCamera.height*0.1
+                        zoom(0)
                     }
                 }
             }
@@ -135,25 +135,40 @@ ApplicationWindow{
     }
     Shortcut{
         sequence: 'Esc'
-        onActivated: Qt.quit()
+        onActivated: {
+            if(xGuide.visible){
+                xGuide.visible=false
+                return
+            }
+            Qt.quit()
+        }
     }
     function center(){
         apps.cameraX=xApp.width/2-xCamera.width/2
         apps.cameraY=xApp.height/2-xCamera.height/2
-        app.contentItem.focus=true
     }
     function zoom(to){
+//        if(xCamera.width<100&&to===0){
+//            return
+//        }
+//        if(xCamera.width>10000000&&to===1){
+//            return
+//        }
         if(to===0){
-            if(apps.cameraWidth>100){
-                apps.cameraWidth-=xCamera.width*0.01
-                apps.cameraHeight-=xCamera.height*0.01
-            }
+            //if(apps.cameraWidth>100){
+            apps.cameraWidth-=xCamera.width*0.1
+            //apps.cameraHeight-=xCamera.height*0.1
+            //xCamera.width=apps.cameraWidth
+            //xCamera.height=apps.cameraHeight
+            //}
+            //return
         }
         if(to===1){
-            if(apps.cameraWidth<1000000){
-                apps.cameraWidth+=xCamera.width*0.01
-                apps.cameraHeight+=xCamera.height*0.01
-            }
+            //if(apps.cameraWidth<1000000){
+                apps.cameraWidth+=xCamera.width*0.1
+                //apps.cameraHeight+=xCamera.height*0.1
+            //}
+            //return
         }
         center()
     }
