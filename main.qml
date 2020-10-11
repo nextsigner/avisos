@@ -12,6 +12,7 @@ ApplicationWindow{
     id:app
     visible: true
     visibility: "Maximized"
+    title: 'qtquick-webcam'
     color: 'black'
     minimumWidth: 500
     minimumHeight: 500
@@ -82,6 +83,13 @@ ApplicationWindow{
                     }
                 }
             }
+        }
+        XMarco1{id: xMarco1}
+        EmisorCircular{
+            id: emisorCircular
+            width: parent.height-app.fs*2
+            height: width
+            anchors.centerIn: parent
         }
         XGuide{id: xGuide; visible:false}
     }
